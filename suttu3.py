@@ -24,11 +24,11 @@ tapahtui_virhe = False
 try:
     # Tutkitaan onko merkkijonossa aakkosia ja annetaan tyyppivirhe jos on
     if paino_str.isalpha():
-        raise TypeError('Vain numerot ja desimaalipilkku on sallittu')
+        raise TypeError('Vain numerot (0..9) ja desimaalipiste(.) on sallittu')
 
     # Jos ei ole virhettä, muutetaan liukuluvuksi
     paino = float(paino_str)
-    
+
 # Jos tapahtui virhe, tulostetaan virheilmoitusteksti ja asetteaan virhemuuttujan arvoksi True    
 except Exception as virhe:
     print(virhe)
