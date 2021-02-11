@@ -17,16 +17,24 @@ ika_str = input('Kuinka vanha olet: ')
 sukupuoli_str = input('Paina 1, jos olet mies, 0 jos olet nainen: ')
 
 # Muutetaan merkkijonot luvuiksi
+# Muuttuja, johon tallentuu tieto virheen tapahtumisesta alustus: False
 tapahtui_virhe = False
 
+# Virheenkäsittelyrutiini
 try:
+    # Tutkitaan onko merkkijonossa aakkosia ja annetaan tyyppivirhe jos on
     if paino_str.isalpha():
         raise TypeError('Vain numerot ja desimaalipilkku on sallittu')
+
+    # Jos ei ole virhettä, muutetaan liukuluvuksi
     paino = float(paino_str)
+    
+# Jos tapahtui virhe, tulostetaan virheilmoitusteksti ja asetteaan virhemuuttujan arvoksi True    
 except Exception as virhe:
     print(virhe)
     tapahtui_virhe = True
 
+# TODO: tee tyyppitarkistusrutiinit kaikille muuttujille
 try:
     pituus = float(pituus_str)
 except:

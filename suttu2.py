@@ -18,6 +18,7 @@ oma_bmi = bmi(74, 1.71)
 
 print('Hoh-hoijaa taas on lihottu, painoindeksi on', oma_bmi)
 
+# TODO: poista tämä esimekki
 try:
     print(x)
 except:
