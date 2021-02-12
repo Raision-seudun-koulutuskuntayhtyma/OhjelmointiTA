@@ -1,3 +1,6 @@
+# Otetaan käyttöön modulin saniteetti.py toiminnot
+import saniteetti
+
 # Funktio painoindeksin (body mass index) laskemiseksi
 def bmi(paino, pituus):
     painoindeksi = paino / pituus ** 2
@@ -12,6 +15,7 @@ def rasvaprosentti(bmi, ika, sukupuoli):
 
 # Kysytään käyttäjältä tarvittavat tiedot, huom näppäistöstä saadaan aina merkkijono (string)
 paino_str = input('Anna painosi kilogrammoina: ')
+paino = saniteetti.on_jarkeva(paino_str, 20, 200)
 pituus_str = input('Anna pituutesi metreinä: ')
 ika_str = input('Kuinka vanha olet: ')
 sukupuoli_str = input('Paina 1, jos olet mies, 0 jos olet nainen: ')
@@ -24,7 +28,7 @@ tapahtui_virhe = False
 try:
     # Tutkitaan onko merkkijonossa aakkosia ja annetaan tyyppivirhe jos on
     if paino_str.isalpha():
-        raise TypeError('Vain numerot (0..9) ja desimaalipiste(.) on sallittu')
+        raise TypeError('Vain numerot (0...9) ja desimaalipiste(.) on sallittu')
 
     # Jos ei ole virhettä, muutetaan liukuluvuksi
     paino = float(paino_str)
