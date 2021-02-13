@@ -58,3 +58,24 @@ def on_jarkeva(syote, alaraja, ylaraja):
 # Testataan toimintaa
 tulos = on_jarkeva('sata', 1, 500)
 print(tulos)
+
+# Parannettu versio järkevyystarkistuksesta
+'''
+Edellisen version ominaisuuksien lisäksi haluamme tarkistaa, että mahdollisen desimaalin
+lisäksi syötteessä on vain numeroita. Idea: jaetaan merkkijono pisteestä kahteen osaan ja tarkistetaan että niissä on vain numeroita
+
+Funktio palauttaa luvun lisäksi virhekoodin ja virheilmoituksen. Pääohjelman koodissa voidaan sillon tarkistaa, onko tapahtunut virhe. Jos on kysytään tieto uudelleen
+'''
+
+def syote_ok(merkkijono, alaraja, ylaraja):
+    """Funktio palauttaa listan, jonka arvoina ovat virhekoodi, virhesanoma ja syöte numeerisessa muodossa
+
+    Args:
+        merkkijono (string): Näppäimistöltä syötettu numeerinen arvo merkkijonona
+        alaraja (float):  Syötteen pienin sallittu arvo
+        ylaraja (float): Syötteen suurin sallittu arvo
+
+    Returns:
+        list: [error (int), error_msg (string), arvo (float)]
+    """
+    
